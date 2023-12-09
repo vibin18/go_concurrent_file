@@ -31,7 +31,7 @@ func hashFile(path string)pair{
 }
 
 
-func searchTree(dir string)(results, error) {
+func searchTree_non_con(dir string)(results, error) {
 	hashes:= make(results)	
 
 	err := filepath.Walk(dir,func(p string, fi os.FileInfo, err error) error {

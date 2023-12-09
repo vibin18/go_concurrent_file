@@ -5,6 +5,7 @@ import (
 //	"hash"
 	"log"
 	"os"
+	"time"
 )
 
 type pair struct{
@@ -15,9 +16,10 @@ type fileList []string
 type results map[string]fileList
 
 func main(){
+	start := time.Now()
 	log.Println("Starting...")
-	if len(os.Args) <2 {
-		log.Fatal("Missing args")
+	if len(os.Args) < 2 {
+		log.Panic("Missing args")
 
 	}
 	log.Println("Starting scan...")
@@ -32,5 +34,5 @@ func main(){
 			}
 		}
 	}
-	log.Println("Finished")
+	log.Printf("Finished in %v", time.Since(start))
 }
